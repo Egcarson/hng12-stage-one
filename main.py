@@ -83,8 +83,8 @@ def input_validator(num: str) -> bool:
 def classify_number(number: str):
 
     if not input_validator(number):
-        raise HTTPException(status_code=400, detail={
-                            "number": number, "error": True})
+        raise HTTPException(status_code=400, content={
+                            "error": True, "number": number})
 
     number = int(number)
 
