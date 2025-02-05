@@ -20,7 +20,7 @@ The **Number Classification API** is a FastAPI-based web service that takes a nu
 ## API Documentation
 ### Base URL
 ```
-<your-domain.com>/api
+https://hng12-stage-one-4lvf.onrender.com/docs
 ```
 
 ### Endpoint: Classify Number
@@ -75,7 +75,7 @@ The **Number Classification API** is a FastAPI-based web service that takes a nu
    ```bash
    fastapi dev main.py
    ```
-5. **Access API Documentation**
+5. **Access API Documentation Locally**
    - Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
    - Redoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
