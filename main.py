@@ -34,6 +34,8 @@ def is_prime(num: int) -> bool:
     return True
 
 def is_perfect(num: int) -> bool:
+    if num < 1:
+        return False
     return sum(n for n in range(1, num) if num % n == 0) == num
 
 def digit_sum(num: int) -> int:
