@@ -20,7 +20,7 @@ The **Number Classification API** is a FastAPI-based web service that takes a nu
 ## API Documentation
 ### Base URL
 ```
-https://hng12-stage-one-4lvf.onrender.com/docs
+[API Documentation](https://hng12-stage-one-4lvf.onrender.com/docs)
 ```
 
 ### Endpoint: Classify Number
