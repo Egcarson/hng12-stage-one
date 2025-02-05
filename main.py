@@ -1,6 +1,7 @@
 import requests
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 app = FastAPI(
     title="NUMBER CLASSIFICATION API",
@@ -8,12 +9,12 @@ app = FastAPI(
 )
 
 # Enabling CORS
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Change this to restrict origins
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
+    allow_headers=["*"],  # Ensure all headers are allowed
 )
 
 # defining functions
@@ -83,7 +84,7 @@ def input_validator(num: str) -> bool:
 def classify_number(number: str):
 
     if not input_validator(number):
-        raise HTTPException(status_code=400, content={
+        raise JSONResponse(status_code=400, content={
                             "error": True, "number": number})
 
     number = int(number)
