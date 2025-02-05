@@ -1,5 +1,5 @@
 import requests
-from fastapi import FastAPI, Query, HTTPException, status
+from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
@@ -80,32 +80,32 @@ def input_validator(num: str) -> bool:
 
 
 @app.get('/api/classify-number', status_code=status.HTTP_200_OK)
-def classify_number(num: str):
+def classify_number(number: str):
 
-    if not input_validator(num):
+    if not input_validator(number):
         raise HTTPException(status_code=400, detail={
-                            "number": num, "error": True})
+                            "number": number, "error": True})
 
-    num = int(num)
+    number = int(number)
 
     # classify number properties and get fun fact
 
     d_properties = []
 
-    if is_amstrong(num):
+    if is_amstrong(number):
         d_properties.append("armstrong")
 
-    if num % 2 == 0:
+    if number % 2 == 0:
         d_properties.append("even")
     else:
         d_properties.append("odd")
 
     result = {
-        "number": num,
-        "is_prime": is_prime(num),
-        "is_perfect": is_perfect(num),
+        "number": number,
+        "is_prime": is_prime(number),
+        "is_perfect": is_perfect(number),
         "properties": d_properties,
-        "digit_sum": digit_sum(num),
-        "fun_fact": get_fun_fact(num)
+        "digit_sum": digit_sum(number),
+        "fun_fact": get_fun_fact(number)
     }
     return result
