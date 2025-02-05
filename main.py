@@ -84,7 +84,7 @@ def input_validator(num: str) -> bool:
 def classify_number(number: str):
 
     if not input_validator(number):
-        raise JSONResponse(status_code=400, content={
+        return JSONResponse(status_code=400, content={
                             "error": True, "number": number})
 
     number = int(number)
