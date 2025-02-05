@@ -3,8 +3,8 @@ from fastapi import FastAPI, Query, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
-    title="HNG12 | NUMBER CLASSIFICATION API",
-    description= "Stage One Task"
+    title="NUMBER CLASSIFICATION API",
+    description= "HNG12 | Stage One Task"
 )
 
 # Enabling CORS
