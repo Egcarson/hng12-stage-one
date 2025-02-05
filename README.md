@@ -18,7 +18,7 @@ The **Number Classification API** is a FastAPI-based web service that takes a nu
 - **External API:** [Numbers API](http://numbersapi.com/)
 
 ## API Documentation
-[Base URL](https://hng12-stage-one-4lvf.onrender.com/docs)
+[Base URL](https://hng12-stage-one-4lvf.onrender.com/api/classify-number?num=371) you can change the number
 
 ### Endpoint: Classify Number
 **GET** `/classify-number?number=<integer>`
